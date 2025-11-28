@@ -316,7 +316,7 @@ const VotingTable = () => {
         </div>
       )}
       <div className="text-center">
-        <h4>Developed by Vishal Vijaykumar Pawar</h4>
+        <h5>Developed by <span className="fw-bolder">Vishal Vijaykumar Pawar</span> </h5>
         <h3>7722002544</h3>
       </div>
     </div>
