@@ -13,9 +13,24 @@ const VotingTable = () => {
   `;
 
   // Candidate Data
-  const nirmal = { name: "निर्मळ रामचंद्र अंबादासराव", symbol: "/logo.jpg", photo: "/nirmal.jpeg", audio: "/nirmal voice.mpeg" };
-  const sirsat = { name: "सिरसट सारिका संतोष", symbol: "/logo.jpg", photo: "/sirsat.jpeg", audio: "/sirsat voice.mpeg" };
-  const shingare = { name: "शिनगारे अतुल सर्जेराव", symbol: "/logo.jpg", photo: "/shingare.jpeg", audio: "/shingare voice.mpeg" };
+  const nirmal = {
+    name: "निर्मळ रामचंद्र अंबादासराव",
+    symbol: "/logo.jpg",
+    photo: "/nirmal.jpeg",
+    audio: "/nirmal voice.mpeg",
+  };
+  const sirsat = {
+    name: "सिरसट सारिका संतोष",
+    symbol: "/logo.jpg",
+    photo: "/sirsat.jpeg",
+    audio: "/sirsat voice.mpeg",
+  };
+  const shingare = {
+    name: "शिनगारे अतुल सर्जेराव",
+    symbol: "/logo.jpg",
+    photo: "/shingare.jpeg",
+    audio: "/shingare voice.mpeg",
+  };
 
   const playAndOpen = (candidate: any, rowIndex: number) => {
     setSelectedCandidate(candidate);
@@ -36,8 +51,7 @@ const VotingTable = () => {
           width: "12px",
           height: "12px",
           backgroundColor: clickedRow === rowIndex ? "green" : "red",
-        }}
-      ></span>
+        }}></span>
       <button className="btn btn-primary px-2 py-1" onClick={onClick}>
         मत&nbsp;द्या
       </button>
@@ -88,7 +102,12 @@ const VotingTable = () => {
             <td>4.</td>
             <td className="px-1 d-flex justify-content-between align-items-center">
               <b style={{ fontSize: "10px" }}>{nirmal.name}</b>
-              <img src={nirmal.photo} width="30" height="30" className="rounded-circle" />
+              <img
+                src={nirmal.photo}
+                width="30"
+                height="30"
+                className="rounded-circle"
+              />
             </td>
             <td>
               <img src={nirmal.symbol} width="40" height="40" />
@@ -133,7 +152,10 @@ const VotingTable = () => {
               <td></td>
               <td></td>
               <td>
-                <VoteBtn rowIndex={100 + n} onClick={() => setClickedRow(100 + n)} />
+                <VoteBtn
+                  rowIndex={100 + n}
+                  onClick={() => setClickedRow(100 + n)}
+                />
               </td>
             </tr>
           ))}
@@ -143,13 +165,21 @@ const VotingTable = () => {
             <td>5.</td>
             <td className="px-1 d-flex justify-content-between align-items-center">
               <b style={{ fontSize: "10px" }}>{sirsat.name}</b>
-              <img src={sirsat.photo} width="30" height="30" className="rounded-circle" />
+              <img
+                src={sirsat.photo}
+                width="30"
+                height="30"
+                className="rounded-circle"
+              />
             </td>
             <td>
               <img src={sirsat.symbol} width="40" height="40" />
             </td>
             <td>
-              <VoteBtn rowIndex={105} onClick={() => playAndOpen(sirsat, 105)} />
+              <VoteBtn
+                rowIndex={105}
+                onClick={() => playAndOpen(sirsat, 105)}
+              />
             </td>
           </tr>
 
@@ -178,7 +208,10 @@ const VotingTable = () => {
             <td></td>
             <td></td>
             <td>
-              <VoteBtn rowIndex={200 + 1} onClick={() => setClickedRow(200 + 1)} />
+              <VoteBtn
+                rowIndex={200 + 1}
+                onClick={() => setClickedRow(200 + 1)}
+              />
             </td>
           </tr>
 
@@ -186,13 +219,21 @@ const VotingTable = () => {
             <td>2.</td>
             <td className="px-1 d-flex justify-content-between align-items-center">
               <b style={{ fontSize: "10px" }}>{shingare.name}</b>
-              <img src={shingare.photo} width="30" height="30" className="rounded-circle" />
+              <img
+                src={shingare.photo}
+                width="30"
+                height="30"
+                className="rounded-circle"
+              />
             </td>
             <td>
               <img src={shingare.symbol} width="40" height="40" />
             </td>
             <td>
-              <VoteBtn rowIndex={202} onClick={() => playAndOpen(shingare, 202)} />
+              <VoteBtn
+                rowIndex={202}
+                onClick={() => playAndOpen(shingare, 202)}
+              />
             </td>
           </tr>
 
@@ -202,7 +243,10 @@ const VotingTable = () => {
               <td></td>
               <td></td>
               <td>
-                <VoteBtn rowIndex={200 + n} onClick={() => setClickedRow(200 + n)} />
+                <VoteBtn
+                  rowIndex={200 + n}
+                  onClick={() => setClickedRow(200 + n)}
+                />
               </td>
             </tr>
           ))}
@@ -222,11 +266,16 @@ const VotingTable = () => {
       {showPopup && selectedCandidate && (
         <div
           className="modal fade show d-flex align-items-center justify-content-center"
-          style={{ display: "block", background: "rgba(0,0,0,0.5)", minHeight: "100vh" }}
-        >
+          style={{
+            display: "block",
+            background: "rgba(0,0,0,0.5)",
+            minHeight: "100vh",
+          }}>
           <div className="modal-dialog">
             <div className="modal-content p-3 rounded">
-              <button className="btn-close ms-auto" onClick={() => setShowPopup(false)}></button>
+              <button
+                className="btn-close ms-auto"
+                onClick={() => setShowPopup(false)}></button>
 
               <div className="text-center">
                 <img
@@ -241,7 +290,9 @@ const VotingTable = () => {
                 </p>
 
                 <div className="d-flex align-items-center justify-content-center bg-success bg-opacity-25 p-2 rounded mt-2">
-                  <span className="me-2" style={{ color: "green", fontSize: "22px" }}>
+                  <span
+                    className="me-2"
+                    style={{ color: "green", fontSize: "22px" }}>
                     ✔
                   </span>
                   <span>तुमचे मत नोंदवले गेले आहे.</span>
@@ -253,15 +304,21 @@ const VotingTable = () => {
                 onClick={() => {
                   const link = "https://sirsat.netlify.app";
                   const msg = `Check this link: ${link}`;
-                  window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
-                }}
-              >
+                  window.open(
+                    `https://wa.me/?text=${encodeURIComponent(msg)}`,
+                    "_blank"
+                  );
+                }}>
                 शेअर करा
               </button>
             </div>
           </div>
         </div>
       )}
+      <div className="text-center">
+        <h3>Developed by Vishal Vijaykumar Pawar</h3>
+        <h3>7722002544</h3>
+      </div>
     </div>
   );
 };
