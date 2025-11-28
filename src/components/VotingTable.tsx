@@ -21,7 +21,7 @@ const VotingTable = () => {
   return (
     <div className="container mt-2">
       <img
-        src="/public/banner.jpeg"
+        src="/banner.jpeg"
         alt="banner"
         className="w-100 h-auto rounded-3"
       />
