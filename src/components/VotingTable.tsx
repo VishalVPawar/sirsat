@@ -5,7 +5,7 @@ const VotingTable = () => {
   const [clickedRow, setClickedRow] = useState<number | null>(null);
   const candidate = {
     name: "सौ. सारिका संतोष (बप्पा) सिरसट",
-    symbol: "/logo.png",
+    symbol: "/logo.jpg",
     number: 1,
   };
 
@@ -21,9 +21,9 @@ const VotingTable = () => {
   return (
     <div className="container mt-2">
       <img
-        src="/banner.jpg"
+        src="/public/banner.jpeg"
         alt="banner"
-        className="w-100 h-auto"
+        className="w-100 h-auto rounded-3"
       />
 
       {/* Date Section */}
@@ -44,45 +44,47 @@ const VotingTable = () => {
           </thead>
 
           <tbody>
+            {[1, 2, 3, 4].map((num) => (
+              <tr key={num}>
+                <td>{num}.</td>
+                <td></td>
+                <td></td>
+
+                <td className="d-flex align-items-center  justify-content-between gap-1">
+                  {/* Dot for every row */}
+                  <span
+                    className="d-inline-block rounded-circle ms-1 bg-danger"
+                    style={{
+                      width: "12px",
+                      height: "12px",
+                    }}></span>
+
+                  <button className="btn btn-primary rounded-pill px-4 py-3 me-1"></button>
+                </td>
+              </tr>
+            ))}
             <tr>
-              <td>&nbsp;</td>
-              <td></td>
-              <td></td>
+              <td>5.</td>
 
-              <td className="d-flex align-items-center  justify-content-between gap-1">
-                <span
-                  className="d-inline-block rounded-circle ms-1 bg-danger"
-                  style={{
-                    width: "12px",
-                    height: "12px",
-                  }}></span>
-
-                <button className="btn btn-primary rounded-pill px-4 py-3 me-1"></button>
-              </td>
-            </tr>
-            <tr className="">
-              <td>&nbsp;</td>
-
-              <td>
+              <td className="px-1">
                 <div
-                  style={{ fontSize: "9px" }}
-                  className="d-flex align-items-center ">
+                  style={{ fontSize: "12px" }}
+                  className="d-flex align-items-center justify-content-between">
+                  <b> सिरसट&nbsp;सारिका&nbsp;संतोष</b>
                   <img
-                    src="/passport.png"
-                    className="mx-1"
+                    src="/sirsat.jpeg"
+                    className="ms-1"
                     width="25"
-                    height="25"
+                    height="30"
                   />
-                  <b> सौ.सारिका&nbsp;संतोष(बप्पा)&nbsp;सिरसट</b>
-                  
                 </div>
               </td>
 
-              <td>
+              <td className="p-0">
                 <img
                   src={candidate.symbol}
                   alt="symbol"
-                  style={{ width: "35px", height: "35px" }}
+                  style={{ width: "45px", height: "45px" }}
                 />
               </td>
 
@@ -107,9 +109,9 @@ const VotingTable = () => {
             </tr>
 
             {/* ------- EMPTY ROWS ------- */}
-            {[3, 4, 5, 6, 7, 8, 9].map((num) => (
+            {[6, 7, 8].map((num) => (
               <tr key={num}>
-                <td>&nbsp;</td>
+                <td>{num}.</td>
                 <td></td>
                 <td></td>
 
@@ -164,7 +166,7 @@ const VotingTable = () => {
                 <h4 className="mt-3">{candidate.name}</h4>
 
                 <p className="mt-1">
-                  चिन्ह : <b> कमळ </b>  <br />
+                  चिन्ह : <b> कमळ </b> <br />
                 </p>
 
                 <div className="d-flex align-items-center justify-content-center bg-success bg-opacity-25 p-2 rounded mt-2">
@@ -183,7 +185,7 @@ const VotingTable = () => {
               <button
                 className="btn btn-success w-100 d-flex align-items-center justify-content-center gap-2 rounded-3 py-2 mt-3"
                 onClick={() => {
-                  const link = "https://euphonious-tapioca-674a12.netlify.app/"; 
+                  const link = "https://sarika-sirsat.netlify.app/";
                   const message = `Check this link: ${link}`;
                   const whatsappURL = `https://wa.me/?text=${encodeURIComponent(
                     message
