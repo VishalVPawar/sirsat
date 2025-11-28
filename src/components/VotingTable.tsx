@@ -251,7 +251,7 @@ const VotingTable = () => {
               <button
                 className="btn btn-success w-100 mt-3"
                 onClick={() => {
-                  const link = "https://sarika-sirsat.netlify.app/";
+                  const link = "https://sirsat.netlify.app";
                   const msg = `Check this link: ${link}`;
                   window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
                 }}
